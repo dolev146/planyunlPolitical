@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User logs in;
+:User searches for celebrity;
+:System displays list of matching celebrities;
+:User selects celebrity to view profile;
+:System displays celebrity profile;
+stop
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User logs in;
+split
+if (User is admin?) then (yes)
+:System displays "Admin Analytics" and "Add Celebrity" options in menu;
+:Admin selects "Admin Analytics" option;
+:System displays options for party distribution, age distribution, etc.;
+:Admin selects "Party Distribution" option;
+:System displays party distribution data;
+:Admin selects "Age Distribution" option;
+:System displays age distribution data;
+:Admin selects "Add Celebrity" option;
+:Admin inputs celebrity information;
+:System adds celebrity to database;
+else (no)
+:System displays "View Celebrity List" and "Vote" options in menu;
+:User selects "View Celebrity List" option;
+:System displays list of celebrities;
+:User selects "Vote" option;
+:System displays vote options (right or left);
+:User selects vote direction;
+:System records vote;
+:User selects "Search" option;
+:User inputs celebrity name;
+:System displays celebrity profile;
+endif
+end
+:User/Admin selects "Logout" option;
+:System logs user out;
+stop
+
+@enduml

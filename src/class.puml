@@ -1,0 +1,261 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+
+' create a class named Category that has two properties,
+' categoryID: String, and categoryName: String
+' and has getters and setters for each property
+' and a constructor that takes two parameters
+' and a toString method
+class Category {
+    -categoryID: String
+    -categoryName: String
+    +getCategoryID(): String
+    +setCategoryID(categoryID: String): void
+    +getCategoryName(): String
+    +setCategoryName(categoryName: String): void
+    +Category(categoryID: String, categoryName: String)
+    +toString(): String
+}
+
+' create a class named Company that has two properties, companyID: String, and companyName: String
+' and has getters and setters for each property
+' and a constructor that takes two parameters
+' and a toString method
+class Company {
+    -companyID: String
+    -companyName: String
+    +getCompanyID(): String
+    +setCompanyID(companyID: String): void
+    +getCompanyName(): String
+    +setCompanyName(companyName: String): void
+    +Company(companyID: String, companyName: String)
+    +toString(): String
+}
+
+
+' create a class named Party that has two properties, partyID: String, and partyName: String
+' and has getters and setters for each property
+' and a constructor that takes two parameters
+' and a toString method
+
+class Party {
+    -partyID: String
+    -partyName: String
+    +getPartyID(): String
+    +setPartyID(partyID: String): void
+    +getPartyName(): String
+    +setPartyName(partyName: String): void
+    +Party(partyID: String, partyName: String)
+    +toString(): String
+}
+
+' create a class named User that has 9 properties,
+' userID : String , roleID : Int
+' favoritePartyID : String , userName: String
+' email : String , registerDate : Long
+' userPref : List<String> , userGender: String
+' userAge : Long
+' and has getters and setters for each property
+' and a constructor that takes 9 parameters
+' and a toString method
+
+class User {
+    -userID: String
+    -roleID: Int
+    -favoritePartyID: String
+    -userName: String
+    -email: String
+    -registerDate: Long
+    -userPref: List<String>
+    -userGender: String
+    -userAge: Long
+    +getUserID(): String
+    +setUserID(userID: String): void
+    +getRoleID(): Int
+    +setRoleID(roleID: Int): void
+    +getFavoritePartyID(): String
+    +setFavoritePartyID(favoritePartyID: String): void
+    +getUserName(): String
+    +setUserName(userName: String): void
+    +getEmail(): String
+    +setEmail(email: String): void
+    +getRegisterDate(): Long
+    +setRegisterDate(registerDate: Long): void
+    +getUserPref(): List<String>
+    +setUserPref(userPref: List<String>): void
+    +getUserGender(): String
+    +setUserGender(userGender: String): void
+    +getUserAge(): Long
+    +setUserAge(userAge: Long): void
+    +User(userID: String, roleID: Int, favoritePartyID: String, userName: String, email: String, registerDate: Long, userPref: List<String>, userGender: String, userAge: Long)
+    +toString(): String
+}
+
+
+' create a class named UserVote that has 5 properties,
+' userEmail: String , CelebFullName : String
+' CategoryName : String , CompanyName : String
+' VoteDirection : String
+' and has getters and setters for each property
+' and a constructor that takes 5 parameters
+' and a toString method
+
+class UserVote {
+    -userEmail: String
+    -celebFullName: String
+    -categoryName: String
+    -companyName: String
+    -voteDirection: String
+    +getUserEmail(): String
+    +setUserEmail(userEmail: String): void
+    +getCelebFullName(): String
+    +setCelebFullName(celebFullName: String): void
+    +getCategoryName(): String
+    +setCategoryName(categoryName: String): void
+    +getCompanyName(): String
+    +setCompanyName(companyName: String): void
+    +getVoteDirection(): String
+    +setVoteDirection(voteDirection: String): void
+    +UserVote(userEmail: String, celebFullName: String, categoryName: String, companyName: String, voteDirection: String)
+    +toString(): String
+}
+
+
+' create a class named VoteOption that has 2 properties,
+' voteID : String , voteDescription : String
+' and has getters and setters for each property
+' and a constructor that takes 2 parameters
+' and a toString method
+
+class VoteOption {
+    -voteID: String
+    -voteDescription: String
+    +getVoteID(): String
+    +setVoteID(voteID: String): void
+    +getVoteDescription(): String
+    +setVoteDescription(voteDescription: String): void
+    +VoteOption(voteID: String, voteDescription: String)
+    +toString(): String
+}
+
+
+' create a class named Celeb that has 8 properties,
+' Company : String , Category : String
+' FirstName : String , LastName : String
+' BirthDate : Long , ImgUrl: String
+' CelebInfo : String
+' RightVotes : Long , LeftVotes : Long
+' and has getters and setters for each property
+' and a constructor that takes 8 parameters
+' and a toString method
+
+
+class Celeb {
+    -company: String
+    -category: String
+    -firstName: String
+    -lastName: String
+    -birthDate: Long
+    -imgUrl: String
+    -celebInfo: String
+    -rightVotes: Long
+    -leftVotes: Long
+    +getCompany(): String
+    +setCompany(company: String): void
+    +getCategory(): String
+    +setCategory(category: String): void
+    +getFirstName(): String
+    +setFirstName(firstName: String): void
+    +getLastName(): String
+    +setLastName(lastName: String): void
+    +getBirthDate(): Long
+    +setBirthDate(birthDate: Long): void
+    +getImgUrl(): String
+    +setImgUrl(imgUrl: String): void
+    +getCelebInfo(): String
+    +setCelebInfo(celebInfo: String): void
+    +getRightVotes(): Long
+    +setRightVotes(rightVotes: Long): void
+    +getLeftVotes(): Long
+    +setLeftVotes(leftVotes: Long): void
+    +Celeb(company: String, category: String, firstName: String, lastName: String, birthDate: Long, imgUrl: String, celebInfo: String, rightVotes: Long, leftVotes: Long)
+    +toString(): String
+}
+
+
+' create a class named CallBack that has 3 properties,
+' it looks like this in kotlin
+'data class CallBack<T, K>(
+ '    private var input: T,
+ '    private var output: K?,
+ '    private var called: Boolean
+ ')
+' and it has a constructor like this  constructor(input_value: T): this(
+                                     '        input =input_value,
+                                     '        called = false, output = null)
+' it has a function named Call  fun Call(){
+                               '        this.called=true
+                               '    }
+'   fun getInput(): T? {
+  '        return input
+  '    }
+' fun setOutput(value: K?){
+ '        output=value
+ '    }
+'fun getOutput(): K? {
+ '        if(!called){
+ '            return null
+ '        }
+ '        return output
+ '    }
+ '   fun getStatus():Boolean{
+    '        return this.called
+    '    }
+
+' and it has a toString method
+
+class CallBack {
+    -input: T
+    -output: K
+    -called: Boolean
+    +Call(input: T)
+    +Call()
+    +Call(input: T, output: K, called: Boolean)
+    +getInput(): T
+    +setInput(input: T): void
+    +getOutput(): K
+    +setOutput(output: K): void
+    +getCalled(): Boolean
+    +setCalled(called: Boolean): void
+    +Call()
+    +toString(): String
+}
+
+
+' write a short explanation about each class
+' in 5 words or less
+
+' User class is used to store user information
+' UserVote class is used to store user vote information
+' VoteOption class is used to store vote option information
+' Celeb class is used to store celebrity information
+' CallBack class is used to store callback information
+' Category class is used to store category information
+' Company class is used to store company information
+' Party class is used to store party information
+
+
+
+
+
+
+
+
+
+
+@enduml

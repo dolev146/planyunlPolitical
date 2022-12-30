@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User logs in;
+if (User is admin?) then (yes)
+:System displays "Add Celebrity" option in menu;
+:Admin selects "Add Celebrity" option;
+:Admin inputs celebrity information;
+:System adds celebrity to database;
+else (no)
+:System displays "View Celebrity List" and "Vote" options in menu;
+:User selects "View Celebrity List" option;
+:System displays list of celebrities;
+:User selects "Vote" option;
+:System displays vote options (right or left);
+:User selects vote direction;
+:System records vote;
+endif
+:User/Admin selects "Logout" option;
+:System logs user out;
+stop
+
+@enduml

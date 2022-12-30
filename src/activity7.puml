@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+split
+  if (is User Registered?) then (yes)
+    :User/Admin inputs login credentials;
+    :System verifies login credentials;
+    split
+      if (User/Admin is admin?) then (yes)
+        :System displays "Update Preferences" option in menu;
+        :Admin selects "Update Preferences" option;
+        :System prompts admin to update preferences;
+        :Admin updates preferences;
+        :System updates preferences in database;
+      else (no)
+        :User performs actions in app (view celebrities, vote, etc.);
+      endif
+    endsplit
+    else (no)
+        :User/Admin inputs registration credentials;
+        :System verifies registration credentials;
+        :System registers user in database;
+        :System displays "Update Preferences" option in menu;
+        :Admin selects "Update Preferences" option;
+        :System prompts admin to update preferences;
+        :Admin updates preferences;
+        :System updates preferences in database;
+        :User performs actions in app (view celebrities, vote, etc.);
+    endif
+    ' then the user return to the user menu
+    :User/Admin selects "Logout" option;
+    :System logs user out;
+    :System displays login screen;
+end split
+    
+stop
+
+@enduml

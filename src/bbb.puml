@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User logs in;
+:User views list of celebrities;
+:User selects celebrity to vote on;
+:User selects vote direction (right or left);
+:System records vote;
+:System displays confirmation message;
+stop
+
+@enduml

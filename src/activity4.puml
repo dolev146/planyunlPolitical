@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Admin logs in;
+:Admin selects "View Analytics" option;
+:System displays list of analytics options (Party Distribution, Age Distribution);
+:Admin selects "Party Distribution" option;
+:System displays party distribution of users;
+:Admin selects "Search" option;
+:Admin inputs search criteria for specific user;
+:System displays matching user's properties;
+:Admin selects "Add Celebrity" option;
+:Admin inputs celebrity information;
+:System adds celebrity to database;
+:Admin selects "Age Distribution" option;
+:System displays age distribution of users;
+:Admin selects "View Celebrity Profile" option;
+:Admin inputs celebrity name;
+:System displays celebrity's profile;
+stop
+
+@enduml

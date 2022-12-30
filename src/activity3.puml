@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:User logs in;
+:User selects "View Analytics" option;
+:System displays list of analytics options (Category, Company);
+:User selects "Category" option;
+:System displays category analytics;
+:User selects "Company" option;
+:System displays company analytics;
+stop
+
+@enduml
