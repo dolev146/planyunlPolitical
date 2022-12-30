@@ -33,7 +33,7 @@ split
     :System logs user out;
     :System displays login screen;
 end split
-    
+
 stop
 
 @enduml

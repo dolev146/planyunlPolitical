@@ -1,0 +1,41 @@
+@startuml
+
+'scale 350 width
+
+[*] --> NotLoggedIn
+
+state NotLoggedIn {
+  [*] --> LoginScreen
+  LoginScreen --> RegisterScreen : EvGoToRegister
+  RegisterScreen --> LoginScreen : EvGoToLogin
+  LoginScreen --> LoggingIn : EvLogin
+  LoggingIn --> NotLoggedIn : EvLoginFailed
+  LoggingIn --> UserMenu : EvLoginSuccess
+  RegisterScreen --> Registering : EvRegister
+  Registering --> NotLoggedIn : EvRegisterFailed
+  Registering --> UserMenu : EvRegisterSuccess
+}
+
+state UserMenu {
+  UserMenu --> SwipeScreen : EvGoToSwipe
+  SwipeScreen --> UserMenu : EvBackToMenu
+  SwipeScreen --> UserProfile : EvViewProfile
+  UserProfile --> UserMenu : EvBackToMenu
+  UserMenu --> UserPreferences : EvUpdatePreferences
+  UserPreferences --> UserMenu : EvBackToMenu
+  UserMenu --> LoggingOut : EvLogout
+  LoggingOut --> NotLoggedIn : EvLogoutSuccess
+}
+
+state AdminMenu {
+  AdminMenu --> AdminAnalytics : EvViewAnalytics
+  AdminAnalytics --> AdminMenu : EvBackToMenu
+  AdminMenu --> AddCelebrity : EvAddCelebrity
+  AddCelebrity --> AdminMenu : EvBackToMenu
+  AdminMenu --> UserManagement : EvManageUsers
+  UserManagement --> AdminMenu : EvBackToMenu
+  AdminMenu --> LoggingOut : EvLogout
+  LoggingOut --> NotLoggedIn : EvLogoutSuccess
+}
+
+@enduml

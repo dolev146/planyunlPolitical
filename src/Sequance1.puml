@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Sequence Diagram
+
+' make a sequence diagram about the App political
+'Stay up to date on the latest celebrity news and politics with politi-cal! This app allows you to choose your preferences and see celebrities that match those categories in a Tinder-style swipe screen. You can also search for specific celebrities and see their profiles, complete with vote results. Plus, the app includes analytics for detailed tracking of user and celebrity data. Stay informed and have fun with politi-cal!
+' the app also has admin features, please show those as well
+
+
+
+actor Admin
+
+actor User
+participant "App" as App
+participant "Database" as DB
+participant "API" as API
+
+User -> App: Open App
+activate App
+
+App -> DB: Get User Data
+activate DB
+DB --> App: User Data
+deactivate DB
+
+App -> API: Get Celebrity Data
+activate API
+API --> App: Celebrity Data
+deactivate API
+
+App -> App: Display User Data
+App -> App: Display Celebrity Data
+
+App -> App: Swipe Right
+App -> App: Swipe Left
+
+App -> App: Search for Celebrity
+App -> App: Display Celebrity Profile
+
+App -> App: Display Analytics
+
+' Admin features
+Admin -> App: Open App
+activate App
+
+App -> DB: Get User Data
+activate DB
+DB --> App: User Data
+deactivate DB
+
+App -> API: Get Celebrity Data
+activate API
+API --> App: Celebrity Data
+deactivate API
+
+App -> App: Display User Data
+App -> App: Display Celebrity Data
+
+' the admin can see analytics for all users and add new celebrities
+App -> App: Display Analytics of admin
+App -> App: Add Celebrity
+
+
+App -> App: Logout
+
+deactivate App
+
+@enduml
